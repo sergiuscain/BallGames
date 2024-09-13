@@ -1,7 +1,10 @@
+using BallGames.Common;
+
 namespace BallGames
 {
     public partial class Form1 : Form
     {
+        Ball ball;
         public Form1()
         {
             InitializeComponent();
@@ -9,10 +12,14 @@ namespace BallGames
 
         private void drawButton_Click(object sender, EventArgs e)
         {
-            var graphics = CreateGraphics();
-            var rectangle = new Rectangle(Convert.ToInt32(textBox1.Text), Convert.ToInt32(textBox2.Text), Convert.ToInt32(textBox3.Text), Convert.ToInt32(textBox3.Text));
-            var brush = Brushes.Aqua; 
-            graphics.FillEllipse(brush, rectangle);
+            ball = new Ball(0, 0, this);
+            ball.Show();
+        }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            ball.Clear();
         }
     }
 }
+ 
