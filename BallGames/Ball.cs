@@ -27,7 +27,9 @@ namespace BallGames.Common
         }
         public void Clear()
         {
-            graphics.Clear(form.BackColor);
+            var clearGraphics = form.CreateGraphics();
+            var brush = new SolidBrush(form.BackColor);
+            clearGraphics.FillRectangle(brush, X, Y, width, height);
         }
         public void Show()
         {
@@ -37,6 +39,12 @@ namespace BallGames.Common
             graphics.FillEllipse(brush, rectangle);
         }
 
+        internal void Move()
+        {
+            Clear();
+            NextPosition();
+            Show();
+        }
     }
 }
 

@@ -30,6 +30,7 @@
         {
             drawButton = new Button();
             ClearButton = new Button();
+            MoveButton = new Button();
             SuspendLayout();
             // 
             // drawButton
@@ -52,11 +53,22 @@
             ClearButton.UseVisualStyleBackColor = true;
             ClearButton.Click += ClearButton_Click;
             // 
+            // MoveButton
+            // 
+            MoveButton.Location = new Point(304, 15);
+            MoveButton.Name = "MoveButton";
+            MoveButton.Size = new Size(75, 23);
+            MoveButton.TabIndex = 2;
+            MoveButton.Text = "Move";
+            MoveButton.UseVisualStyleBackColor = true;
+            MoveButton.Click += MoveButton_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(MoveButton);
             Controls.Add(ClearButton);
             Controls.Add(drawButton);
             Name = "Form1";
@@ -68,5 +80,6 @@
 
         private Button drawButton;
         private Button ClearButton;
+        private Button MoveButton;
     }
 }
