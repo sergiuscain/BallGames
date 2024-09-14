@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Timer = System.Windows.Forms.Timer;
 
 namespace BallGames.Common
 {
@@ -13,13 +14,23 @@ namespace BallGames.Common
         private int height { get; set; } = 40;
         private Form form;
         private Graphics graphics;
+        private Timer timer;
 
         public Ball(int x, int y, Form form)
         {
             X = x;
             Y = y;
             this.form = form;
+            timer = new Timer();
+            timer.Interval = 10;
+            timer.Tick += Timer_Tick;
         }
+
+        private void Timer_Tick(object? sender, EventArgs e)
+        {
+            Step();
+        }
+
         public void NextPosition()
         {
             X += vX;
@@ -39,11 +50,19 @@ namespace BallGames.Common
             graphics.FillEllipse(brush, rectangle);
         }
 
-        internal void Move()
+        internal void Step()
         {
             Clear();
             NextPosition();
             Show();
+        }
+        internal void Start()
+        {
+            timer.Start();
+        }
+        internal void Stop()
+        {
+            timer.Stop();
         }
     }
 }

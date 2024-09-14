@@ -39,7 +39,7 @@ namespace BallGames
             {
                 foreach (Ball ball in balls)
                 {
-                    ball.Move();
+                    ball.Start();
                 }
             }
         }
