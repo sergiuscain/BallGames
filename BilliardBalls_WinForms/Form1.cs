@@ -11,9 +11,11 @@ namespace BilliardBalls_WinForms
 
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
-            Ball ball = new Ball(e.X, e.Y, this);
+            Ball ball = new BilliardBall(e.X, e.Y, this);
             ball.SetColor(Color.White);
+            ball.SetDirection(5, 5);
             ball.Show();
+            ball.StartMove();
         }
     }
 }

@@ -4,24 +4,24 @@ namespace BallGames.Common;
 
     public class Ball 
     {
-        private int X { get; set; }
-        private int Y { get; set; }
-        private int vX { get; set; } = 5;
-        private int vY { get; set; } = 5;
-        private int radius { get; set; } = 40;
-        private Form form;
-        private Graphics graphics;
-        private Timer timer;
-        private Brush brush;
-        Random r = new Random();
+        protected int centerX { get; set; }
+        protected int centerY { get; set; }
+        protected int vX { get; set; } = 3;
+        protected int vY { get; set; } = 3;
+        protected int radius { get; set; } = 16;
+        protected Form form;
+        protected Graphics graphics;
+        protected Timer timer;
+        protected Brush brush;
+        protected Random r = new Random();
 
         public Ball(int x, int y, Form form)
         {
-            X = x-radius/2;
-            Y = y-radius/2;
+            centerX = x-radius/2;
+            centerY = y-radius/2;
             this.form = form;
             timer = new Timer();
-            timer.Interval = 10;
+            timer.Interval = 5;
             timer.Tick += Timer_Tick;
             brush = Brushes.Black;
         }
@@ -32,21 +32,21 @@ namespace BallGames.Common;
             Step();
         }
 
-        private void NextPosition()
+        protected virtual void NextPosition()
         {
-            X += vX;
-            Y += vY;
+            centerX += vX;
+            centerY += vY;
         }
         public void Clear()
         {
             var clearGraphics = form.CreateGraphics();
             var clearBrush = new SolidBrush(form.BackColor);
-            clearGraphics.FillRectangle(clearBrush, X, Y, radius, radius);
+            clearGraphics.FillRectangle(clearBrush, centerX, centerY, radius, radius);
         }
         public void Show()
         {
             graphics = form.CreateGraphics();
-            var rectangle = new Rectangle(X, Y, radius, radius);
+            var rectangle = new Rectangle(centerX, centerY, radius, radius);
             graphics.FillEllipse(brush, rectangle);
         }
 
@@ -67,8 +67,8 @@ namespace BallGames.Common;
 
         public void SetPosition(int x, int y)
         {
-            X = x;
-            Y = y;
+            centerX = x;
+            centerY = y;
         }
 
         public void SetSpeed(int speed)
@@ -83,7 +83,7 @@ namespace BallGames.Common;
 
         public bool IsCollision(int x, int y)
         {
-            return (x - X) * (x - X) + (y - Y) * (y - Y) <= radius*radius;
+            return (x - centerX) * (x - centerX) + (y - centerY) * (y - centerY) <= radius*radius;
         }
         public void ReverseDirection()
         {

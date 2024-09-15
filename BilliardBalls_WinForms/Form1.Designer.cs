@@ -35,8 +35,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(800, 450);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            ClientSize = new Size(747, 491);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
