@@ -8,5 +8,12 @@ namespace BilliardBalls_WinForms
         {
             InitializeComponent();
         }
+
+        private void Form1_MouseDown(object sender, MouseEventArgs e)
+        {
+            Ball ball = new Ball(e.X, e.Y, this);
+            ball.SetColor(Color.White);
+            ball.Show();
+        }
     }
 }

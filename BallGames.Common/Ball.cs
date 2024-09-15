@@ -4,11 +4,11 @@ namespace BallGames.Common;
 
     public class Ball 
     {
-        private int X { get; set; } = 0;
-        private int Y { get; set; } = 0;
+        private int X { get; set; }
+        private int Y { get; set; }
         private int vX { get; set; } = 5;
         private int vY { get; set; } = 5;
-        private int radius { get; set; } = 20;
+        private int radius { get; set; } = 40;
         private Form form;
         private Graphics graphics;
         private Timer timer;
@@ -17,8 +17,8 @@ namespace BallGames.Common;
 
         public Ball(int x, int y, Form form)
         {
-            X = x;
-            Y = y;
+            X = x-radius/2;
+            Y = y-radius/2;
             this.form = form;
             timer = new Timer();
             timer.Interval = 10;

@@ -40,6 +40,7 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            MouseDown += Form1_MouseDown;
             ResumeLayout(false);
         }
 
