@@ -8,7 +8,7 @@ namespace BallGames.Common;
         private int Y { get; set; } = 0;
         private int vX { get; set; } = 5;
         private int vY { get; set; } = 5;
-        private int radius { get; set; } = 40;
+        private int radius { get; set; } = 20;
         private Form form;
         private Graphics graphics;
         private Timer timer;
