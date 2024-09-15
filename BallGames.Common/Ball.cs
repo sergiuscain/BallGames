@@ -1,10 +1,8 @@
-﻿using System;
-using System.Windows.Forms;
-using Timer = System.Windows.Forms.Timer;
+﻿using Timer = System.Windows.Forms.Timer;
 
-namespace BallGames.Common
-{
-    internal class Ball 
+namespace BallGames.Common;
+
+    public class Ball 
     {
         private int X { get; set; } = 0;
         private int Y { get; set; } = 0;
@@ -31,7 +29,7 @@ namespace BallGames.Common
             Step();
         }
 
-        public void NextPosition()
+        private void NextPosition()
         {
             X += vX;
             Y += vY;
@@ -50,51 +48,51 @@ namespace BallGames.Common
             graphics.FillEllipse(brush, rectangle);
         }
 
-        internal void Step()
+        public void Step()
         {
             Clear();
             NextPosition();
             Show();
         }
-        internal void StartMove()
+        public void StartMove()
         {
             timer.Start();
         }
-        internal void StopMove()
+        public void StopMove()
         {
             timer.Stop();
         }
 
-        internal void SetPosition(int x, int y)
+        public void SetPosition(int x, int y)
         {
             X = x;
             Y = y;
         }
 
-        internal void SetSpeed(int speed)
+        public void SetSpeed(int speed)
         {
             timer.Interval = speed;
         }
-        internal void SetDirection(int vX, int vY)
+        public void SetDirection(int vX, int vY)
         {
             this.vX = vX;
             this.vY = vY;
         }
 
-        internal bool IsCollision(int x, int y)
+        public bool IsCollision(int x, int y)
         {
             return (x - X) * (x - X) + (y - Y) * (y - Y) <= radius*radius;
         }
-        internal void ReverseDirection()
+        public void ReverseDirection()
         {
             vX = -vX;
             vY = -vY;
         }
-        internal bool IsMoving()
+        public bool IsMoving()
         {
             return timer.Enabled;
         }
     }
-}
+
 
 // Ball class represents a ball in the game. It has properties for position, speed, and direction.
