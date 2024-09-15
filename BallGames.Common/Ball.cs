@@ -4,11 +4,11 @@ namespace BallGames.Common;
 
     public class Ball 
     {
-        protected int centerX { get; set; }
-        protected int centerY { get; set; }
+        public int centerX { get; protected set; }
+        public int centerY { get; protected set; }
         protected int vX { get; set; } = 3;
         protected int vY { get; set; } = 3;
-        protected int radius { get; set; } = 16;
+        public int radius { get; protected set; } = 16;
         protected Form form;
         protected Graphics graphics;
         protected Timer timer;
@@ -50,7 +50,7 @@ namespace BallGames.Common;
             graphics.FillEllipse(brush, rectangle);
         }
 
-        public void Step()
+        protected  void Step()
         {
             Clear();
             NextPosition();
