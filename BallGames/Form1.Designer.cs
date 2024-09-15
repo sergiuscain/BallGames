@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             drawButton = new Button();
-            ClearButton = new Button();
-            MoveButton = new Button();
+            clearButton = new Button();
+            moveButton = new Button();
+            stopButton = new Button();
             SuspendLayout();
             // 
             // drawButton
@@ -43,43 +44,59 @@
             drawButton.UseVisualStyleBackColor = true;
             drawButton.Click += drawButton_Click;
             // 
-            // ClearButton
+            // clearButton
             // 
-            ClearButton.Location = new Point(183, 21);
-            ClearButton.Name = "ClearButton";
-            ClearButton.Size = new Size(75, 23);
-            ClearButton.TabIndex = 1;
-            ClearButton.Text = "Clear";
-            ClearButton.UseVisualStyleBackColor = true;
-            ClearButton.Click += ClearButton_Click;
+            clearButton.Enabled = false;
+            clearButton.Location = new Point(183, 21);
+            clearButton.Name = "clearButton";
+            clearButton.Size = new Size(75, 23);
+            clearButton.TabIndex = 1;
+            clearButton.Text = "Clear";
+            clearButton.UseVisualStyleBackColor = true;
+            clearButton.Click += ClearButton_Click;
             // 
-            // MoveButton
+            // moveButton
             // 
-            MoveButton.Location = new Point(304, 15);
-            MoveButton.Name = "MoveButton";
-            MoveButton.Size = new Size(75, 23);
-            MoveButton.TabIndex = 2;
-            MoveButton.Text = "Move";
-            MoveButton.UseVisualStyleBackColor = true;
-            MoveButton.Click += MoveButton_Click;
+            moveButton.Enabled = false;
+            moveButton.Location = new Point(280, 21);
+            moveButton.Name = "moveButton";
+            moveButton.Size = new Size(75, 23);
+            moveButton.TabIndex = 2;
+            moveButton.Text = "Move";
+            moveButton.UseVisualStyleBackColor = true;
+            moveButton.Click += MoveButton_Click;
+            // 
+            // stopButton
+            // 
+            stopButton.Enabled = false;
+            stopButton.Location = new Point(389, 21);
+            stopButton.Name = "stopButton";
+            stopButton.Size = new Size(75, 23);
+            stopButton.TabIndex = 3;
+            stopButton.Text = "Stop";
+            stopButton.UseVisualStyleBackColor = true;
+            stopButton.Click += StopButton_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(MoveButton);
-            Controls.Add(ClearButton);
+            Controls.Add(stopButton);
+            Controls.Add(moveButton);
+            Controls.Add(clearButton);
             Controls.Add(drawButton);
             Name = "Form1";
             Text = "Form1";
+            MouseDown += Form1_MouseDown;
             ResumeLayout(false);
         }
 
         #endregion
 
         private Button drawButton;
-        private Button ClearButton;
-        private Button MoveButton;
+        private Button clearButton;
+        private Button moveButton;
+        private Button stopButton;
     }
 }

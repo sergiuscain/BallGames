@@ -4,14 +4,13 @@ using Timer = System.Windows.Forms.Timer;
 
 namespace BallGames.Common
 {
-    internal class Ball
+    internal class Ball 
     {
         private int X { get; set; } = 0;
         private int Y { get; set; } = 0;
         private int vX { get; set; } = 5;
         private int vY { get; set; } = 5;
-        private int width { get; set; } = 40;
-        private int height { get; set; } = 40;
+        private int radius { get; set; } = 40;
         private Form form;
         private Graphics graphics;
         private Timer timer;
@@ -25,6 +24,7 @@ namespace BallGames.Common
             timer.Interval = 10;
             timer.Tick += Timer_Tick;
         }
+
 
         private void Timer_Tick(object? sender, EventArgs e)
         {
@@ -40,13 +40,13 @@ namespace BallGames.Common
         {
             var clearGraphics = form.CreateGraphics();
             var brush = new SolidBrush(form.BackColor);
-            clearGraphics.FillRectangle(brush, X, Y, width, height);
+            clearGraphics.FillRectangle(brush, X, Y, radius, radius);
         }
         public void Show()
         {
             graphics = form.CreateGraphics();
             var brush = Brushes.Aqua;
-            var rectangle = new Rectangle(X, Y, width, height);
+            var rectangle = new Rectangle(X, Y, radius, radius);
             graphics.FillEllipse(brush, rectangle);
         }
 
@@ -56,13 +56,43 @@ namespace BallGames.Common
             NextPosition();
             Show();
         }
-        internal void Start()
+        internal void StartMove()
         {
             timer.Start();
         }
-        internal void Stop()
+        internal void StopMove()
         {
             timer.Stop();
+        }
+
+        internal void SetPosition(int x, int y)
+        {
+            X = x;
+            Y = y;
+        }
+
+        internal void SetSpeed(int speed)
+        {
+            timer.Interval = speed;
+        }
+        internal void SetDirection(int vX, int vY)
+        {
+            this.vX = vX;
+            this.vY = vY;
+        }
+
+        internal bool IsCollision(int x, int y)
+        {
+            return (x - X) * (x - X) + (y - Y) * (y - Y) <= radius*radius;
+        }
+        internal void ReverseDirection()
+        {
+            vX = -vX;
+            vY = -vY;
+        }
+        internal bool IsMoving()
+        {
+            return timer.Enabled;
         }
     }
 }
