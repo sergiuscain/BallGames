@@ -19,13 +19,15 @@ namespace BallGames
             moveButton.Enabled = true;
             clearButton.Enabled = true;
             stopButton.Enabled = false;
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < r.Next(7,20); i++)
             {
 
                 Ball ball = new Ball(r.Next(0, this.Height), r.Next(0, this.Width), this);
-                ball.Show();
                 ball.SetSpeed(r.Next(1, 10));
                 ball.SetDirection(r.Next(-5, 5), r.Next(-5, 5));
+                ball.SetColor(ball.RandomCollor());
+                ball.SetRadius(r.Next(4,40));
+                ball.Show();
                 balls.Add(ball);
             }
         }
@@ -42,6 +44,7 @@ namespace BallGames
                     ball.StopMove();
                     ball.Clear();
                 }
+                balls.Clear();
             }
         }
 
