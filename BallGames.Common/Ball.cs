@@ -12,6 +12,7 @@ namespace BallGames.Common;
         private Form form;
         private Graphics graphics;
         private Timer timer;
+        private Brush brush;
 
         public Ball(int x, int y, Form form)
         {
@@ -21,6 +22,7 @@ namespace BallGames.Common;
             timer = new Timer();
             timer.Interval = 10;
             timer.Tick += Timer_Tick;
+            brush = Brushes.Black;
         }
 
 
@@ -37,13 +39,12 @@ namespace BallGames.Common;
         public void Clear()
         {
             var clearGraphics = form.CreateGraphics();
-            var brush = new SolidBrush(form.BackColor);
-            clearGraphics.FillRectangle(brush, X, Y, radius, radius);
+            var clearBrush = new SolidBrush(form.BackColor);
+            clearGraphics.FillRectangle(clearBrush, X, Y, radius, radius);
         }
         public void Show()
         {
             graphics = form.CreateGraphics();
-            var brush = Brushes.Aqua;
             var rectangle = new Rectangle(X, Y, radius, radius);
             graphics.FillEllipse(brush, rectangle);
         }
@@ -92,7 +93,11 @@ namespace BallGames.Common;
         {
             return timer.Enabled;
         }
+        public void SetColor(Color color)
+    {
+        brush = new SolidBrush(color);
     }
+}
 
 
 // Ball class represents a ball in the game. It has properties for position, speed, and direction.
