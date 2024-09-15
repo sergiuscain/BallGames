@@ -17,7 +17,7 @@ namespace BallGames
             drawButton.Enabled = false;
             moveButton.Enabled = true;
             clearButton.Enabled = true;
-            stopButton.Enabled = true;
+            stopButton.Enabled = false;
             for (int i = 0; i < 10; i++)
             {
 
@@ -34,7 +34,6 @@ namespace BallGames
             drawButton.Enabled = true;
             clearButton.Enabled = false;
             moveButton.Enabled = false;
-            stopButton.Enabled = false;
             if (balls.Count > 0)
             {
                 foreach (Ball ball in balls)
@@ -47,6 +46,7 @@ namespace BallGames
 
         private void MoveButton_Click(object sender, EventArgs e)
         {
+            stopButton.Enabled = true ;
             if (balls.Count > 0)
             {
                 foreach (Ball ball in balls)
