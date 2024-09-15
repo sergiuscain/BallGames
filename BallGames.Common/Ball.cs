@@ -12,8 +12,9 @@ namespace BallGames.Common;
         protected Form form;
         protected Graphics graphics;
         protected Timer timer;
+        public Color color { get; protected set; }
         protected Brush brush;
-        protected Random r = new Random();
+        public Random r = new Random();
 
         public Ball(int x, int y, Form form)
         {
@@ -50,7 +51,7 @@ namespace BallGames.Common;
             graphics.FillEllipse(brush, rectangle);
         }
 
-        protected  void Step()
+        public  void Step()
         {
             Clear();
             NextPosition();
@@ -96,6 +97,7 @@ namespace BallGames.Common;
         }
         public void SetColor(Color color)
     {
+        this.color = color;
         brush = new SolidBrush(color);
     }
 
@@ -153,6 +155,11 @@ namespace BallGames.Common;
     public void SetRadius(int radius)
     {
         this.radius = radius;
+    }
+
+    public Color GetColor()
+    {
+        return this.color;
     }
 }
 
