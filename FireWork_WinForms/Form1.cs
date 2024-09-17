@@ -6,7 +6,8 @@ namespace FireWork_WinForms
     {
         private float startPosition = 0;
         private float endPosition = 0;
-        private float startMinusEndPosition = 0;
+        int x;
+        int y;
         public Form1()
         {
             InitializeComponent();
@@ -15,9 +16,15 @@ namespace FireWork_WinForms
 
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
-            var firework = new GravityBall(e.X, e.Y,this);
+            startPosition = e.Y;
+        }
+
+        private void Form1_MouseUp(object sender, MouseEventArgs e)
+        {
+            endPosition = e.Y;
+            var firework = new GravityBall(e.X, e.Y, this);
             firework.SetRadius(random.Next(20, 35));
-            firework.SetDirection(0, random.Next(-20,-10));
+            firework.SetDirection(0, -Math.Abs(startPosition-endPosition)/10);
             firework.SetColor(Color.Blue);
             firework.StartMove();
         }

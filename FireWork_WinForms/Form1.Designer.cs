@@ -39,6 +39,7 @@
             Name = "Form1";
             Text = "Form1";
             MouseDown += Form1_MouseDown;
+            MouseUp += Form1_MouseUp;
             ResumeLayout(false);
         }
 

@@ -76,7 +76,7 @@ namespace BallGames.Common;
         {
             timer.Interval = speed;
         }
-        public void SetDirection(int vX, int vY)
+        public void SetDirection(float vX, float vY)
         {
             this.vX = vX;
             this.vY = vY;
