@@ -4,11 +4,11 @@ namespace BallGames.Common;
 
     public class Ball 
     {
-        public int centerX { get; protected set; }
-        public int centerY { get; protected set; }
-        protected int vX { get; set; } = 3;
-        protected int vY { get; set; } = 3;
-        public int radius { get; protected set; } = 16;
+        public float centerX { get; protected set; }
+        public float centerY { get; protected set; }
+        protected float vX { get; set; } = 0;
+        protected float vY { get; set; } = 0;
+        public float radius { get; protected set; } = 16;
         protected Form form;
         protected Graphics graphics;
         protected Timer timer;
@@ -47,7 +47,7 @@ namespace BallGames.Common;
         public void Show()
         {
             graphics = form.CreateGraphics();
-            var rectangle = new Rectangle(centerX, centerY, radius, radius);
+            var rectangle = new RectangleF(centerX, centerY, radius, radius);
             graphics.FillEllipse(brush, rectangle);
         }
 

@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatchMe_WinFormsGame", "Bal
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BallGame.Common", "BallGame.Common\BallGame.Common.csproj", "{C1F90CC6-3E34-4CA0-9713-981B443B96D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BallGames.Common", "BallGames.Common\BallGames.Common.csproj", "{AF75C5F9-EBAC-4DEE-A0FB-09B300761C1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BallGames.Common", "BallGames.Common\BallGames.Common.csproj", "{AF75C5F9-EBAC-4DEE-A0FB-09B300761C1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilliardBalls_WinForms", "BilliardBalls_WinForms\BilliardBalls_WinForms.csproj", "{8365E7AB-825F-40C3-A86B-ACB25B735661}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BilliardBalls_WinForms", "BilliardBalls_WinForms\BilliardBalls_WinForms.csproj", "{8365E7AB-825F-40C3-A86B-ACB25B735661}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FireWork_WinForms", "FireWork_WinForms\FireWork_WinForms.csproj", "{21F04A2D-AA37-4442-9D17-D5B6AF47CDE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{8365E7AB-825F-40C3-A86B-ACB25B735661}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8365E7AB-825F-40C3-A86B-ACB25B735661}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8365E7AB-825F-40C3-A86B-ACB25B735661}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21F04A2D-AA37-4442-9D17-D5B6AF47CDE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21F04A2D-AA37-4442-9D17-D5B6AF47CDE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21F04A2D-AA37-4442-9D17-D5B6AF47CDE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21F04A2D-AA37-4442-9D17-D5B6AF47CDE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
