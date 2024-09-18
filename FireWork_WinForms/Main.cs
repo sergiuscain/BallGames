@@ -22,5 +22,11 @@ namespace FireWork_WinForms
             Test1_Form test1_Form = new Test1_Form();
             test1_Form.ShowDialog();
         }
+
+        private void Test2_Button_Click(object sender, EventArgs e)
+        {
+            Test2_Form test2_Form = new Test2_Form();
+            test2_Form.ShowDialog();
+        }
     }
 }

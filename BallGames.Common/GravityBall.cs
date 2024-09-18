@@ -11,7 +11,7 @@ namespace BallGames.Common
         private float g = 0.5f;
 
 
-        public GravityBall(int x, int y, Form form) : base(x, y, form)
+        public GravityBall(float x, float y, Form form) : base(x, y, form)
         {
 
         }

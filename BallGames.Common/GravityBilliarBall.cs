@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace BallGames.Common
 {
-    public class GravityBilliarBoll : BilliardBall
+    public class GravityBilliarBall : BilliardBall
     {
         private float g = 0.5f;
-        public GravityBilliarBoll(int x, int y, Form form) : base(x, y, form)
+        public GravityBilliarBall(int x, int y, Form form) : base(x, y, form)
         {
         }
         protected override void NextPosition()

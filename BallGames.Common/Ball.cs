@@ -4,10 +4,11 @@ namespace BallGames.Common;
 
     public class Ball 
     {
+        Random random = new Random();
         public float centerX { get; protected set; }
         public float centerY { get; protected set; }
-        protected float vX { get; set; } = 0;
-        protected float vY { get; set; } = 0;
+        public float vX { get; protected set; } = 0;
+        public float vY { get; protected set; } = 0;
         public float radius { get; protected set; } = 16;
         protected Form form;
         protected Graphics graphics;
@@ -16,7 +17,7 @@ namespace BallGames.Common;
         protected Brush brush;
         public Random r = new Random();
 
-        public Ball(int x, int y, Form form)
+        public Ball(float x, float y, Form form)
         {
             centerX = x-radius/2;
             centerY = y-radius/2;
@@ -28,7 +29,7 @@ namespace BallGames.Common;
         }
 
 
-        private void Timer_Tick(object? sender, EventArgs e)
+    private void Timer_Tick(object? sender, EventArgs e)
         {
             Step();
         }

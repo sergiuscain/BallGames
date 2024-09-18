@@ -22,7 +22,7 @@ namespace FireWork_WinForms
         private void Form1_MouseUp(object sender, MouseEventArgs e)
         {
             endPosition = e.Y;
-            var firework = new GravityBilliarBoll(e.X, e.Y, this);
+            var firework = new GravityBilliarBall(e.X, e.Y, this);
             firework.SetRadius(random.Next(20, 35));
             firework.SetDirection(0, -Math.Abs(startPosition-endPosition)/10);
             firework.SetColor(Color.Blue);
