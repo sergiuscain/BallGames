@@ -5,6 +5,7 @@ namespace BallGames.Common;
     public class Ball 
     {
         Random random = new Random();
+        public bool active = true;
         public float centerX { get; protected set; }
         public float centerY { get; protected set; }
         public float vX { get; protected set; } = 0;
@@ -23,7 +24,7 @@ namespace BallGames.Common;
             centerY = y-radius/2;
             this.form = form;
             timer = new Timer();
-            timer.Interval = 5;
+            timer.Interval = 1;
             timer.Tick += Timer_Tick;
             brush = Brushes.Black;
         }

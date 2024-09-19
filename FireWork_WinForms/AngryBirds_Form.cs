@@ -40,6 +40,9 @@ namespace FireWorkAndAngryBirds_WinForms
 
         private void AngryBirds_Form_MouseDown(object sender, MouseEventArgs e)
         {
+            if (bird.active == true)
+            {
+
             float x = (e.X - bird.centerX)/kX;
             float y = (e.Y - bird.centerY) / kY;
             if (x > maxX)
@@ -48,6 +51,8 @@ namespace FireWorkAndAngryBirds_WinForms
                 y = maxY;
             bird.SetDirection(x,y);
             bird.StartMove();
+            bird.active = false;
+            }
         }
     }
 }
