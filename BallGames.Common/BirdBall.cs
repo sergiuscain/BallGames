@@ -8,7 +8,8 @@ namespace BallGames.Common
 {
     public class BirdBall : Ball
     {
-        public float g { get; protected set; } = 0.5f;
+        public float g { get; protected set; } = 0.2f;
+        public float elastic { get; protected set; } = 0.2f;
         public BirdBall(int x, int y, Form form) : base(x, y, form)
         {
             SetColor(Color.Red);
@@ -16,18 +17,19 @@ namespace BallGames.Common
         }
         protected override void NextPosition()
         {
-            vY += g;
             base.NextPosition();
-            if (centerY >= form.Height-radius)
+            if (centerY >= form.Height-radius*2)
             {
                 vY = -vY;
-            }
-            if (centerY >= form.Height - (radius-10))
-            {
-                StopMove();
+                vY *= elastic;
+                vX *= elastic;
                 centerY = form.Height-radius*2;
-                Show();
             }
+            if (centerX >= form.Width-radius || centerX < -radius)
+            {
+                vX = -vX;
+            }
+            vY += g;
         }
     }
 }

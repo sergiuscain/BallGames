@@ -13,6 +13,12 @@ namespace FireWorkAndAngryBirds_WinForms
 {
     public partial class AngryBirds_Form : Form
     {
+        BirdBall bird;
+        PigBall pig;
+        private float kX = 25;
+        private float kY = 13;
+        private float maxX = 15;
+        private float maxY = -19;
         public AngryBirds_Form()
         {
             InitializeComponent();
@@ -24,12 +30,24 @@ namespace FireWorkAndAngryBirds_WinForms
 
         private void AngryBirds_Form_Shown(object sender, EventArgs e)
         {
-            BirdBall bird = new BirdBall(0 + 50, Height - 80, this);
+            bird = new BirdBall(0 + 50, Height - 80, this);
             bird.Show();
-            PigBall pig = new PigBall(Width - 100, Height - 80, this);
+            pig = new PigBall(Width - 100, Height - 80, this);
             pig.Show();
 
 
+        }
+
+        private void AngryBirds_Form_MouseDown(object sender, MouseEventArgs e)
+        {
+            float x = (e.X - bird.centerX)/kX;
+            float y = (e.Y - bird.centerY) / kY;
+            if (x > maxX)
+                x = maxX;
+            if (y < maxY)
+                y = maxY;
+            bird.SetDirection(x,y);
+            bird.StartMove();
         }
     }
 }
