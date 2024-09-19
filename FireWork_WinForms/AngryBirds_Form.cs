@@ -20,8 +20,16 @@ namespace FireWorkAndAngryBirds_WinForms
 
         private void AngryBirds_Form_Load(object sender, EventArgs e)
         {
-            BirdBall bird = new BirdBall(0+50,Height-200, this);
-            bird.StartMove();
+        }
+
+        private void AngryBirds_Form_Shown(object sender, EventArgs e)
+        {
+            BirdBall bird = new BirdBall(0 + 50, Height - 80, this);
+            bird.Show();
+            PigBall pig = new PigBall(Width - 100, Height - 80, this);
+            pig.Show();
+
+
         }
     }
 }

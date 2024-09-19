@@ -15,11 +15,11 @@ namespace BallGames.Common
 
         protected override void NextPosition()
         {
-            if (centerX < 0 || centerX+radius+radius > form.Width)
+            if (centerX-radius <= 0 || centerX+radius >= form.Width)
             {
                 vX = -vX;
             }
-            if (centerY < 0 || centerY+radius +radius +radius> form.Height)
+            if (centerY-radius <= 0 || centerY+radius >= form.Height)
             {
                 vY = -vY;
             }

@@ -8,7 +8,7 @@ namespace BallGames.Common
 {
     public class GravityBilliarBall : BilliardBall
     {
-        private float g = 0.5f;
+        private float g = 1f;
         public GravityBilliarBall(int x, int y, Form form) : base(x, y, form)
         {
         }

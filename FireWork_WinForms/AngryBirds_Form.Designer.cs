@@ -40,6 +40,7 @@
             Name = "AngryBirds_Form";
             Text = "AngryBirds_Form";
             Load += AngryBirds_Form_Load;
+            Shown += AngryBirds_Form_Shown;
             ResumeLayout(false);
         }
 
