@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BallGames.Common", "BallGam
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BilliardBalls_WinForms", "BilliardBalls_WinForms\BilliardBalls_WinForms.csproj", "{8365E7AB-825F-40C3-A86B-ACB25B735661}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FireWork_WinForms", "FireWork_WinForms\FireWork_WinForms.csproj", "{21F04A2D-AA37-4442-9D17-D5B6AF47CDE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FireWorkAndAngryBirds_WinForms", "FireWork_WinForms\FireWorkAndAngryBirds_WinForms.csproj", "{21F04A2D-AA37-4442-9D17-D5B6AF47CDE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

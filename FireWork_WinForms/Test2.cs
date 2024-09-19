@@ -16,7 +16,6 @@ namespace FireWork_WinForms
     {
         Random random = new Random();
         public List<GravityBall> balls = new List<GravityBall>();
-        Timer startFireTimer = new Timer();
         public Test2_Form()
         {
             InitializeComponent();
@@ -25,27 +24,31 @@ namespace FireWork_WinForms
         private void Fire_Button_Click(object sender, EventArgs e)
         {
             var fireWork = new GravityBall(Width/2, Height, this);
-            fireWork.SetDirection(0, -20f);
+            fireWork.SetDirection(0, -23f);
             fireWork.SetColor(Color.Pink);
             fireWork.StartMove();
-            startFireTimer.Interval = 500;
-            startFireTimer.Start();
-            startFireTimer.Tick += StartFireTimer_Tick;
+            fireWork.actionTimer.Tick += ActionTimer_Tick;
+            fireWork.actionTimer.Interval = random.Next(500, 680);
+            fireWork.actionTimer.Start();
             balls.Add(fireWork);
         }
 
-        private void StartFireTimer_Tick(object? sender, EventArgs e)
+        private void ActionTimer_Tick(object? sender, EventArgs e)
         {
-            GravityBall ball = balls[balls.Count - 1];
+            GravityBall ball = balls.First();
+            int firstIndex = balls.IndexOf(ball);
             ball.StopMove();
             ball.Clear();
-            startFireTimer.Stop();
+            
             for (int i = 0; i < random.Next(8,15); i++)
             {
                 var fireBall = new FireWorkBall(ball.centerX, ball.centerY, this);
                 fireBall.SetColor(fireBall.RandomCollor());
                 fireBall.StartMove();
             }
+            balls.RemoveAt(firstIndex);
+            ball.actionTimer.Stop();
+            
         }
     }
 }

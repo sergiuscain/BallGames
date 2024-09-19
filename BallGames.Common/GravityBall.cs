@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Timer = System.Windows.Forms.Timer;
 
 namespace BallGames.Common
 {
     public class GravityBall : Ball
     {
         private float g = 0.5f;
-
+        public Timer actionTimer = new Timer();
 
         public GravityBall(float x, float y, Form form) : base(x, y, form)
         {
