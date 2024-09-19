@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FireWorkAndAngryBirds_WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,6 +28,12 @@ namespace FireWork_WinForms
         {
             Test2_Form test2_Form = new Test2_Form();
             test2_Form.ShowDialog();
+        }
+
+        private void AngryBirds_Button_Click(object sender, EventArgs e)
+        {
+            AngryBirds_Form angryBirds_Form = new AngryBirds_Form();
+            angryBirds_Form.ShowDialog();
         }
     }
 }

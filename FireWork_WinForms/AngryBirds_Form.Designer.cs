@@ -39,6 +39,7 @@
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "AngryBirds_Form";
             Text = "AngryBirds_Form";
+            Load += AngryBirds_Form_Load;
             ResumeLayout(false);
         }
 

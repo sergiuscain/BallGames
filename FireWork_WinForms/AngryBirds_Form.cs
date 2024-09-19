@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BallGames.Common;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace FireWorkAndAngryBirds_WinForms
         public AngryBirds_Form()
         {
             InitializeComponent();
+        }
+
+        private void AngryBirds_Form_Load(object sender, EventArgs e)
+        {
+            BirdBall bird = new BirdBall(0+50,Height-200, this);
+            bird.StartMove();
         }
     }
 }

@@ -67,6 +67,7 @@
             AngryBirds_Button.TabIndex = 2;
             AngryBirds_Button.Text = "AngryBirds";
             AngryBirds_Button.UseVisualStyleBackColor = false;
+            AngryBirds_Button.Click += AngryBirds_Button_Click;
             // 
             // Main
             // 
