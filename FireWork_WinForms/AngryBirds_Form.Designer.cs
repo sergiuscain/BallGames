@@ -28,7 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            scoreLabel = new Label();
+            birdCountLabel = new Label();
             SuspendLayout();
+            // 
+            // scoreLabel
+            // 
+            scoreLabel.AutoSize = true;
+            scoreLabel.BackColor = Color.GreenYellow;
+            scoreLabel.Location = new Point(8, 12);
+            scoreLabel.Name = "scoreLabel";
+            scoreLabel.Size = new Size(13, 15);
+            scoreLabel.TabIndex = 0;
+            // 
+            // birdCountLabel
+            // 
+            birdCountLabel.AutoSize = true;
+            birdCountLabel.Location = new Point(-2, 433);
+            birdCountLabel.Name = "birdCountLabel";
+            birdCountLabel.Size = new Size(13, 15);
+            birdCountLabel.TabIndex = 1;
             // 
             // AngryBirds_Form
             // 
@@ -36,6 +55,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSalmon;
             ClientSize = new Size(800, 450);
+            Controls.Add(birdCountLabel);
+            Controls.Add(scoreLabel);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "AngryBirds_Form";
             Text = "AngryBirds_Form";
@@ -43,8 +64,12 @@
             Shown += AngryBirds_Form_Shown;
             MouseDown += AngryBirds_Form_MouseDown;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label scoreLabel;
+        private Label birdCountLabel;
     }
 }

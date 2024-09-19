@@ -84,7 +84,7 @@ namespace BallGames.Common;
             this.vY = vY;
         }
 
-        public bool IsCollision(int x, int y)
+        public bool IsCollision(float x, float y)
         {
             return (x - centerX) * (x - centerX) + (y - centerY) * (y - centerY) <= radius*radius;
         }
